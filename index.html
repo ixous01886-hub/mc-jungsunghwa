@@ -69,7 +69,7 @@
       <span class="hero__sign" aria-hidden="true">JUNG SUNG HWA</span>
     </div>
   </div>
-  <a href="#stats" class="hero__scroll" aria-label="아래로 스크롤">SCROLL</a>
+  <a href="#about" class="hero__scroll" aria-label="아래로 스크롤">SCROLL</a>
 </section>
 
 <!-- 행사명 흐르는 띠 -->
@@ -78,8 +78,8 @@
 </div>
 
 <!-- ============ STATS ============ -->
-<!-- TODO(고객 확인): 아래 숫자는 임시값입니다. 실제 수치로 바꿔주세요 (data-count 값과 단위). -->
-<section class="stats" id="stats">
+<!-- 숫자 섹션: 실제 수치(경력·누적 행사 등)를 받으면 hidden을 지우고 data-count 값을 바꿔서 다시 켜기 -->
+<section class="stats" id="stats" hidden>
   <div class="container stats__grid">
     <div class="stat reveal"><strong><span data-count="10">0</span><small>년+</small></strong><p>행사 진행 경력</p></div>
     <div class="stat reveal"><strong><span data-count="500">0</span><small>회+</small></strong><p>누적 행사</p></div>
@@ -244,7 +244,7 @@
     <p class="eyebrow eyebrow--dark reveal">PROCESS</p>
     <h2 class="section-title reveal">섭외 <em>진행 절차</em></h2>
     <ol class="process__list">
-      <li class="reveal"><b>01</b><h3>섭외 문의</h3><p>전화·문자·카카오톡으로<br>행사 일정과 내용을 알려주세요.</p></li>
+      <li class="reveal"><b>01</b><h3>섭외 문의</h3><p>전화·문자·이메일로<br>행사 일정과 내용을 알려주세요.</p></li>
       <li class="reveal"><b>02</b><h3>상담 · 견적</h3><p>행사 규모와 대상, 목적을 듣고<br>맞춤 견적을 안내드립니다.</p></li>
       <li class="reveal"><b>03</b><h3>프로그램 기획</h3><p>큐시트와 레크리에이션 구성을<br>담당자와 함께 확정합니다.</p></li>
       <li class="reveal"><b>04</b><h3>현장 진행</h3><p>사전 리허설 후,<br>잊지 못할 하루를 만듭니다.</p></li>
@@ -253,7 +253,7 @@
 </section>
 
 <!-- ============ CONTACT ============ -->
-<!-- TODO(고객 확인): 전화번호 010-0000-0000, 이메일, 카카오톡 채널 주소를 실제 정보로 바꿔주세요. -->
+<!-- 카카오톡 채널 · 인스타그램은 주소를 받으면 연락처 버튼에 추가 -->
 <section class="contact" id="contact">
   <div class="container contact__grid">
     <div class="contact__text">
@@ -261,17 +261,17 @@
       <h2 class="section-title section-title--light reveal">당신의 행사를<br><em>빛나게</em> 해드리겠습니다</h2>
       <p class="lead lead--light reveal">행사 날짜 · 장소 · 인원 · 행사 성격을 알려주시면 <br>빠르게 상담해 드립니다.</p>
       <div class="contact__btns">
-        <a class="cbtn reveal" href="tel:01000000000">
+        <a class="cbtn reveal" href="tel:01022530676">
           <span class="cbtn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>
-          <span><small>전화 문의</small><b>010-0000-0000</b></span>
+          <span><small>전화 문의</small><b>010-2253-0676</b></span>
         </a>
-        <a class="cbtn cbtn--kakao reveal" href="http://pf.kakao.com/" target="_blank" rel="noopener">
-          <span class="cbtn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.2 4.7 6.6l-1 3.6c-.1.3.3.6.6.4l4.2-2.8c.5.1 1 .1 1.5.1 5.5 0 10-3.5 10-7.9S17.5 3 12 3z"/></svg></span>
-          <span><small>카카오톡 상담</small><b>채널 바로가기</b></span>
+        <a class="cbtn reveal" href="sms:01022530676">
+          <span class="cbtn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 1-2zm3 6v2h2V9zm4 0v2h2V9zm4 0v2h2V9z"/></svg></span>
+          <span><small>문자 문의</small><b>문자 보내기</b></span>
         </a>
-        <a class="cbtn reveal" href="mailto:example@naver.com">
+        <a class="cbtn reveal" href="mailto:thezament@naver.com">
           <span class="cbtn__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4 7v10h16V7z"/></svg></span>
-          <span><small>이메일 · 제안</small><b>example@naver.com</b></span>
+          <span><small>이메일 · 제안</small><b>thezament@naver.com</b></span>
         </a>
       </div>
     </div>
@@ -284,12 +284,11 @@
 </main>
 
 <!-- ============ FOOTER ============ -->
-<!-- TODO(고객 확인): 상호 · 사업자등록번호 · 주소는 있을 경우에만 채우고, 없으면 해당 줄을 지워주세요. -->
 <footer class="footer">
   <div class="container">
     <p class="footer__logo"><span>MC</span> 정성화</p>
     <p class="footer__info">
-      대표 : 정성화 &nbsp;|&nbsp; TEL : 010-0000-0000 &nbsp;|&nbsp; E-MAIL : example@naver.com
+      대표 : 정성화 &nbsp;|&nbsp; TEL : 010-2253-0676 &nbsp;|&nbsp; E-MAIL : thezament@naver.com
     </p>
     <p class="footer__copy">COPYRIGHT © <span id="year">2026</span> MC JUNG SUNG HWA. ALL RIGHTS RESERVED.</p>
   </div>
@@ -297,9 +296,9 @@
 
 <!-- 모바일 하단 고정 문의 바 -->
 <div class="fab" aria-label="빠른 문의">
-  <a href="tel:01000000000" class="fab__call">📞 전화 문의</a>
-  <a href="sms:01000000000" class="fab__sms">💬 문자</a>
-  <a href="http://pf.kakao.com/" target="_blank" rel="noopener" class="fab__kakao">카카오톡</a>
+  <a href="tel:01022530676" class="fab__call">📞 전화 문의</a>
+  <a href="sms:01022530676" class="fab__sms">💬 문자</a>
+  <a href="mailto:thezament@naver.com" class="fab__mail">✉️ 메일</a>
 </div>
 
 <!-- 사진 크게 보기 -->
