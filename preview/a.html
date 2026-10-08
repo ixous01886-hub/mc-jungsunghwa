@@ -28,12 +28,22 @@
 .hero__video{z-index:0}.hero::before{z-index:1!important}.hero__glow{z-index:1}.hero__inner{z-index:2}.hero__scroll{z-index:3}
 .hero__photo img{position:relative;z-index:1}.hero__sign{z-index:0}
 .preview-tag{position:fixed;z-index:999;left:50%;top:84px;transform:translateX(-50%);background:#ff3b5c;color:#fff;font-weight:800;font-size:14px;padding:8px 16px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.3);pointer-events:none}
-@media(max-width:768px){.preview-tag{top:70px;font-size:12px}}
+@media(max-width:768px){.preview-tag{top:16px;font-size:11px;padding:6px 12px;z-index:60}}
 
 .hero__video{inset:0;width:100%;height:100%;opacity:.45;filter:saturate(.9)}
 .hero::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(5,8,15,.92) 0%,rgba(5,8,15,.65) 40%,rgba(5,8,15,.2) 70%,rgba(5,8,15,.45) 100%),linear-gradient(0deg,rgba(5,8,15,.95) 0%,transparent 35%)}
 .hero__glow{opacity:.5}
 @media(max-width:768px){.hero::before{background:linear-gradient(0deg,rgba(5,8,15,.97) 30%,rgba(5,8,15,.35) 70%,rgba(5,8,15,.6) 100%)}}
+
+.hero__video-band{display:none}
+@media(max-width:768px){
+  .hero{flex-direction:column;align-items:stretch}
+  .hero__video{filter:blur(18px) saturate(.8);opacity:.35}
+  .hero__video-band{display:block;position:relative;z-index:2;width:100%;aspect-ratio:16/9;object-fit:contain;margin-top:var(--header-h);background:#000}
+  .hero__inner{padding-top:12px}
+  .hero__photo{height:46svh;min-height:320px}
+  .hero__text{margin-top:-90px}
+}
 </style>
 </head>
 <body>
@@ -64,6 +74,9 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <video class="hero__video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="preview/assets/intro.mp4" type="video/mp4">
+  </video>
+  <video class="hero__video-band" autoplay muted loop playsinline preload="auto">
     <source src="preview/assets/intro.mp4" type="video/mp4">
   </video>
   <div class="hero__glow" aria-hidden="true"></div>
