@@ -323,6 +323,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .cbtn__icon svg { width: 22px; height: 22px; fill: #fff; }
 .cbtn--kakao .cbtn__icon { background: var(--kakao); }
 .cbtn--kakao .cbtn__icon svg { fill: #3a1d1d; }
+.cbtn--insta .cbtn__icon { background: linear-gradient(45deg, #f9a825, #e1306c 55%, #833ab4); }
+.footer__info a { color: #9eabc2; text-decoration: underline; text-underline-offset: 3px; }
 .contact__photo img {
   width: 100%; max-width: 520px; margin-left: auto;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 78%, transparent), linear-gradient(to right, transparent 0, #000 22%, #000 78%, transparent 100%);
