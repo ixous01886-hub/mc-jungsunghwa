@@ -37,12 +37,9 @@
 
 .hero__video-band{display:none}
 @media(max-width:768px){
-  .hero{flex-direction:column;align-items:stretch}
-  .hero__video{filter:blur(18px) saturate(.8);opacity:.35}
-  .hero__video-band{display:block;position:relative;z-index:2;width:100%;aspect-ratio:16/9;object-fit:contain;margin-top:var(--header-h);background:#000}
-  .hero__inner{padding-top:12px}
-  .hero__photo{height:46svh;min-height:320px}
-  .hero__text{margin-top:-90px}
+  .hero__video{filter:blur(16px) saturate(.85);opacity:.4}
+  .hero__video-band{display:block;position:absolute;z-index:0;left:0;right:0;top:calc(var(--header-h) + 36px);width:100%;aspect-ratio:16/9;object-fit:contain;opacity:.85;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%)}
+  .hero::before{background:linear-gradient(0deg,rgba(5,8,15,.97) 30%,rgba(5,8,15,.2) 62%,rgba(5,8,15,.35) 100%)!important}
 }
 </style>
 </head>
