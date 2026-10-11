@@ -339,7 +339,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .cbtn--insta .cbtn__icon { background: linear-gradient(45deg, #f9a825, #e1306c 55%, #833ab4); }
 .footer__info a { color: #9eabc2; text-decoration: underline; text-underline-offset: 3px; }
 .contact__photo img {
-  width: 100%; max-width: 520px; margin-left: auto;
+  width: 100%; height: auto; max-width: 520px; margin-left: auto;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 78%, transparent), linear-gradient(to right, transparent 0, #000 22%, #000 78%, transparent 100%);
   -webkit-mask-composite: source-in; mask-composite: intersect;
   mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 78%, transparent), linear-gradient(to right, transparent 0, #000 22%, #000 78%, transparent 100%);
@@ -459,7 +459,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .contact { padding-top: 88px; }
   .contact__text { padding-bottom: 0; }
   .contact__btns { max-width: none; }
-  .contact__photo img { max-width: 78%; margin: 40px auto 0; }
+  .contact__photo img { max-width: 80%; margin: 40px auto 0; /* 모바일: 상반신만 자른 사진(contact-mobile.jpg) */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 6%, #000 72%, transparent), linear-gradient(to right, transparent 0, #000 12%, #000 88%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 6%, #000 72%, transparent), linear-gradient(to right, transparent 0, #000 12%, #000 88%, transparent 100%);
+  }
 
   .footer { padding-bottom: calc(100px + env(safe-area-inset-bottom)); }
   .footer__info { line-height: 1.9; }
