@@ -118,14 +118,22 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   color: #fff;
   display: flex; align-items: center;
 }
-.hero__video { position: absolute; inset: -20px; width: calc(100% + 40px); height: calc(100% + 40px); object-fit: cover; opacity: .12; filter: blur(8px) saturate(.6); }
+.hero__video { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .45; filter: saturate(.9); }
+.hero__video-band { display: none; } /* 모바일 전용: 잘리지 않는 영상 */
+/* 영상 위에 깔아 글씨가 잘 읽히게 하는 어두운 막 */
+.hero::before {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(5,8,15,.92) 0%, rgba(5,8,15,.65) 40%, rgba(5,8,15,.2) 70%, rgba(5,8,15,.45) 100%),
+    linear-gradient(0deg, rgba(5,8,15,.95) 0%, transparent 35%);
+}
 .hero__glow {
-  position: absolute; width: 720px; height: 720px; right: 4%; top: 12%;
+  position: absolute; z-index: 1; opacity: .5; width: 720px; height: 720px; right: 4%; top: 12%;
   background: radial-gradient(circle, rgba(47,139,255,.35), transparent 65%);
   filter: blur(20px);
 }
 .hero__inner {
-  position: relative; z-index: 1;
+  position: relative; z-index: 2;
   width: min(1200px, 100% - 48px); margin-inline: auto;
   display: grid; grid-template-columns: 1.05fr .95fr; align-items: end; gap: 40px;
   padding-top: var(--header-h);
@@ -144,20 +152,20 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero__desc strong { color: #fff; }
 .hero__btns { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 12px; }
 .hero__photo { position: relative; align-self: end; height: min(88vh, 860px); }
-.hero__photo img {
+.hero__photo img { /* 배경을 지운 인물 사진(투명 PNG/WebP) */
+  position: relative; z-index: 1;
   height: 100%; width: auto; margin-left: auto; object-fit: contain; object-position: bottom;
-  -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%), linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%);
-  -webkit-mask-composite: source-in; mask-composite: intersect;
-  mask-image: linear-gradient(to bottom, #000 72%, transparent 100%), linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
 }
 .hero__sign {
-  position: absolute; right: -10px; bottom: 16%;
+  position: absolute; z-index: 0; right: -10px; bottom: 16%;
   font-family: var(--display); font-size: clamp(40px, 6vw, 84px); letter-spacing: .02em; line-height: 1;
   color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.22);
   writing-mode: vertical-rl; transform: rotate(180deg);
 }
 .hero__scroll {
-  position: absolute; z-index: 2; left: 50%; bottom: 26px; transform: translateX(-50%);
+  position: absolute; z-index: 3; left: 50%; bottom: 26px; transform: translateX(-50%);
   font-family: var(--display); font-size: 11px; letter-spacing: .3em; color: rgba(255,255,255,.55);
   padding-bottom: 46px;
 }
@@ -385,6 +393,15 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .hero__glow { width: 420px; height: 420px; right: -80px; top: 6%; }
   .hero__btns .btn { flex: 1; padding: 0 16px; height: 52px; font-size: 15px; }
   .hero__scroll { display: none; }
+  /* 모바일: 세로 화면이라 영상 전체가 보이도록 가로폭에 맞춘 영상을 인물 뒤에 두고, 뒤는 흐린 영상으로 채움 */
+  .hero::before { background: linear-gradient(0deg, rgba(5,8,15,.97) 30%, rgba(5,8,15,.2) 62%, rgba(5,8,15,.35) 100%); }
+  .hero__video { filter: blur(16px) saturate(.85); opacity: .4; }
+  .hero__video-band {
+    display: block; position: absolute; z-index: 0; left: 0; right: 0; top: calc(var(--header-h) + 36px);
+    width: 100%; aspect-ratio: 16/9; object-fit: contain; opacity: .85;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 7%, #000 93%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 7%, #000 93%, transparent 100%);
+  }
 
   .ticker { padding: 12px 0; }
   .ticker__track span { font-size: 14px; }
@@ -450,7 +467,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
   /* 하단 고정 문의 바 */
   .fab {
-    display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 6px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
     position: fixed; z-index: 40; left: 10px; right: 10px; bottom: calc(10px + env(safe-area-inset-bottom));
     padding: 6px; border-radius: 16px; background: rgba(10,15,28,.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 10px 30px rgba(0,0,0,.3);
