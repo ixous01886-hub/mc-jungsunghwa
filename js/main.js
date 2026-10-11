@@ -25,12 +25,20 @@ const CATEGORY_NAMES = {
   teambuilding: "팀빌딩", welfare: "복지·공공", ceremony: "준공식",
 };
 
-/* 상단 띠에 흐르는 행사명 */
-const TICKER = [
-  "서울고속버스터미널 송년회", "현대자동차 블루핸즈 송년의 밤", "안양중앙인정시장 100주년",
-  "평택소방서 의용소방대 워크숍", "수서 함께하게 FESTA", "세곡동 한마음축제",
-  "메타리치 시그널그룹 체육대회", "경서 골목형상가 물놀이 축제", "서울시립대 동문회",
-  "하남시 사회복지협의회", "내곡느티나무쉼터 예술발표회", "어깨동무 한마음 축제",
+/* 메인 아래 두 줄로 흐르는 행사명 (1줄: 왼쪽으로, 2줄: 오른쪽으로) */
+const TICKER_ROWS = [
+  [
+    "서울고속버스터미널 송년회", "현대자동차 블루핸즈 송년의 밤", "메타리치 시그널그룹 체육대회",
+    "모두투어 인터내셔널", "삼성서울병원 임상시험센터", "해군사관학교 27기", "건강보험심사평가원",
+    "서산기지 군무원단 체육대회", "안양중앙인정시장 100주년", "평택소방서 의용소방대 워크숍",
+    "Wind River KDC 송년회", "강남성심병원 정형외과 송년회", "우신화장품 송년의 밤", "성원아이앤디 송년의 밤",
+  ],
+  [
+    "한양대 경영전문대학원 골프 CEO 총회", "수서 함께하게 FESTA", "세곡동 한마음축제", "게르베 패밀리 크리스마스",
+    "경서 골목형상가 물놀이 축제", "드림엔젤스 겨울캠프", "서울시립대 동문회", "매그너스의료재단",
+    "하남시 사회복지협의회", "관악구 의사회", "내곡느티나무쉼터 예술발표회", "어깨동무 한마음 축제",
+    "토탈몰드", "이브라", "신원종합개발", "경기도 시군 이동지원센터",
+  ],
 ];
 
 const PAGE_SIZE = 12;
@@ -60,8 +68,19 @@ document.addEventListener("DOMContentLoaded", () => {
   nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
 
   /* ---------- 티커 (끊김 없이 돌도록 두 번 반복) ---------- */
-  const ticker = document.getElementById("ticker");
-  ticker.innerHTML = [...TICKER, ...TICKER].map((t) => `<span>${t}</span>`).join("");
+  TICKER_ROWS.forEach((row, i) => {
+    document.getElementById(`ticker${i + 1}`).innerHTML = [...row, ...row].map((t) => `<span>${t}</span>`).join("");
+  });
+
+  /* ---------- 진행 이력 더보기 ---------- */
+  const careerList = document.getElementById("careerList");
+  const careerMore = document.getElementById("careerMore");
+  careerMore.addEventListener("click", () => {
+    const open = careerList.classList.toggle("is-open");
+    careerMore.setAttribute("aria-expanded", String(open));
+    careerMore.textContent = open ? "접기 −" : `진행 이력 전체 보기 (${careerList.children.length}) +`;
+    if (!open) careerList.scrollIntoView({ block: "start" });
+  });
 
   /* ---------- 스크롤 등장 애니메이션 ---------- */
   const io = new IntersectionObserver((entries) => {

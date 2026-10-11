@@ -61,7 +61,7 @@
       <p class="hero__brush reveal">첫 30초</p>
       <h1 class="hero__title reveal">대중을 사로잡는<br><em>진행</em></h1>
       <p class="hero__tags reveal"><span>#에너지</span><span>#공감</span><span>#전문MC</span></p>
-      <p class="hero__desc reveal">체육대회 · 지역축제 · 기업 송년회 · 팀빌딩까지<br>현장의 분위기를 끌어올리는 <strong>MC 정성화</strong>입니다.</p>
+      <p class="hero__desc reveal">레크리에이션 · 팀빌딩 · 기업 송년회까지<br>현장의 분위기를 끌어올리는 <strong>MC 정성화</strong>입니다.</p>
       <div class="hero__btns reveal">
         <a href="#contact" class="btn btn--primary">섭외 문의하기</a>
         <a href="#video" class="btn btn--ghost">진행 영상 보기 ▶</a>
@@ -77,7 +77,8 @@
 
 <!-- 행사명 흐르는 띠 -->
 <div class="ticker" aria-hidden="true">
-  <div class="ticker__track" id="ticker"></div>
+  <div class="ticker__track" id="ticker1"></div>
+  <div class="ticker__track ticker__track--reverse" id="ticker2"></div>
 </div>
 
 <!-- ============ STATS ============ -->
@@ -219,25 +220,43 @@
       <p class="lead reveal">기업·공공기관·지역축제·복지기관까지, <br>다양한 현장에서 신뢰를 쌓아왔습니다.</p>
       <img class="history__photo reveal" src="images/profile/vest.jpg" alt="MC 정성화" width="800" height="1200" loading="lazy">
     </div>
+    <div class="career-wrap">
     <ul class="career" id="careerList">
       <li class="reveal"><span class="career__tag">기업</span>(주)서울고속버스터미널 어드민 송년회 밤</li>
       <li class="reveal"><span class="career__tag">기업</span>현대자동차 블루핸즈 서인천서비스 송년의 밤</li>
+      <li class="reveal"><span class="career__tag">기업</span>메타리치 시그널그룹 체육대회</li>
+      <li class="reveal"><span class="career__tag">기업</span>모두투어 인터내셔널 행사</li>
       <li class="reveal"><span class="career__tag">기업</span>(주)우신화장품 송년의 밤</li>
       <li class="reveal"><span class="career__tag">기업</span>(주)성원아이앤디 송년의 밤</li>
-      <li class="reveal"><span class="career__tag">기업</span>메타리치 시그널그룹 체육대회</li>
+      <li class="reveal"><span class="career__tag">기업</span>Wind River KDC 송년회</li>
+      <li class="reveal"><span class="career__tag">기업</span>게르베 패밀리 크리스마스</li>
+      <li class="reveal"><span class="career__tag">공공</span>건강보험심사평가원 행사</li>
+      <li class="reveal"><span class="career__tag">공공</span>서산기지 군무원단 체육대회</li>
       <li class="reveal"><span class="career__tag">공공</span>평택소방서 상반기 의용소방대 직무교육 및 워크숍</li>
-      <li class="reveal"><span class="career__tag">공공</span>경기도 시군 이동지원센터 성과공유회</li>
-      <li class="reveal"><span class="career__tag">공공</span>하남시 사회복지협의회 제6차 이사회 및 송년회 밤</li>
       <li class="reveal"><span class="career__tag">축제</span>안양중앙인정시장 100주년 기념행사</li>
-      <li class="reveal"><span class="career__tag">축제</span>수서 함께하게 FESTA</li>
-      <li class="reveal"><span class="career__tag">축제</span>세곡동 한마음축제 체육대회</li>
-      <li class="reveal"><span class="career__tag">축제</span>경서 골목형상가 물놀이 축제</li>
-      <li class="reveal"><span class="career__tag">축제</span>어깨동무 한마음 축제</li>
-      <li class="reveal"><span class="career__tag">복지</span>내곡느티나무쉼터 예술발표회</li>
-      <li class="reveal"><span class="career__tag">모임</span>서울시립대 동문회 환경공학인의 밤</li>
-      <li class="reveal"><span class="career__tag">모임</span>64년 용띠모임 송년회</li>
-      <li class="reveal"><span class="career__tag">기관</span>뉴스타트병원 송년회 밤</li>
+      <li class="reveal career__more"><span class="career__tag">기관</span>삼성서울병원 임상시험센터 행사</li>
+      <li class="reveal career__more"><span class="career__tag">기관</span>강남성심병원 정형외과 송년회</li>
+      <li class="reveal career__more"><span class="career__tag">모임</span>해군사관학교 27기 행사</li>
+      <li class="reveal career__more"><span class="career__tag">모임</span>한양대 경영전문대학원 골프 CEO 총회</li>
+      <li class="reveal career__more"><span class="career__tag">공공</span>경기도 시군 이동지원센터 성과공유회</li>
+      <li class="reveal career__more"><span class="career__tag">공공</span>하남시 사회복지협의회 제6차 이사회 및 송년회 밤</li>
+      <li class="reveal career__more"><span class="career__tag">축제</span>수서 함께하게 FESTA</li>
+      <li class="reveal career__more"><span class="career__tag">축제</span>세곡동 한마음축제 체육대회</li>
+      <li class="reveal career__more"><span class="career__tag">축제</span>경서 골목형상가 물놀이 축제</li>
+      <li class="reveal career__more"><span class="career__tag">축제</span>어깨동무 한마음 축제</li>
+      <li class="reveal career__more"><span class="career__tag">기업</span>(주)토탈몰드 행사</li>
+      <li class="reveal career__more"><span class="career__tag">기업</span>(주)이브라 행사</li>
+      <li class="reveal career__more"><span class="career__tag">기업</span>신원종합개발 행사</li>
+      <li class="reveal career__more"><span class="career__tag">기관</span>의료법인 매그너스의료재단 행사</li>
+      <li class="reveal career__more"><span class="career__tag">기관</span>뉴스타트병원 송년회 밤</li>
+      <li class="reveal career__more"><span class="career__tag">복지</span>내곡느티나무쉼터 예술발표회</li>
+      <li class="reveal career__more"><span class="career__tag">복지</span>드림엔젤스 겨울캠프</li>
+      <li class="reveal career__more"><span class="career__tag">모임</span>서울시립대 동문회 환경공학인의 밤</li>
+      <li class="reveal career__more"><span class="career__tag">모임</span>관악구 의사회 행사</li>
+      <li class="reveal career__more"><span class="career__tag">모임</span>64년 용띠모임 송년회</li>
     </ul>
+    <div class="career__toggle"><button class="btn btn--outline" id="careerMore" aria-expanded="false" aria-controls="careerList">진행 이력 전체 보기 (32) +</button></div>
+    </div>
   </div>
 </section>
 
