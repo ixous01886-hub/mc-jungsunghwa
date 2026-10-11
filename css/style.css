@@ -150,6 +150,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero__tags span { font-weight: 700; font-size: 14px; padding: 6px 14px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); }
 .hero__desc { margin-top: 22px; font-size: clamp(15px, 1.5vw, 18px); color: #b6c0d2; }
 .hero__desc strong { color: #fff; }
+.nowrap { white-space: nowrap; }
 .hero__btns { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 12px; }
 .hero__photo { position: relative; align-self: end; height: min(88vh, 860px); }
 .hero__photo img { /* 배경을 지운 인물 사진(투명 PNG/WebP) */
